@@ -45,8 +45,8 @@ of your day!
 ![GIF](demo/herokuapp.gif)
 
 
-App deployed on Heroku 
-Link: https://tunh-notetaker.herokuapp.com/
+
+Link to Heroku App : https://tunh-notetaker.herokuapp.com/
 
 
 
