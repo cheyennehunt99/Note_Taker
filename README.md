@@ -43,8 +43,10 @@ of your day!
 
 ## Expectations
 ![GIF](demo/herokuapp.gif)
+
+
 App deployed on Heroku 
-Link: (https://tunh-notetaker.herokuapp.com/)
+Link: https://tunh-notetaker.herokuapp.com/
 
 
 
