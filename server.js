@@ -13,7 +13,8 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 //Require routes file
-require('./routes/routes')(app);
+require('./Routes/apiRoutes')(app);
+require('./Routes/htmlRoutes')(app);
 
 // Setup listener
 app.listen(PORT, function() {
