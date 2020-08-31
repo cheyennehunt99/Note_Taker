@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8080;
 // Setup data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static('public'));
 
 //Require routes file
 require('./Routes/apiRoutes')(app);
@@ -18,5 +18,5 @@ require('./Routes/htmlRoutes')(app);
 
 // Setup listener
 app.listen(PORT, function() {
-    console.log(`App listening on PORT:${PORT}`);
+    console.log("App listening on: http://localhost:" + PORT);
 });  

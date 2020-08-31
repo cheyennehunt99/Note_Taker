@@ -1,43 +1,79 @@
 const fs = require('fs');
+const { v4: uuidv4 } = require('uuid');
+const dbNotes = require('../db/db.json');
 
-module.exports = app => {
 
-    // Setup notes variable
-    fs.readFile("db/db.json","utf8", (err, data) => {
+module.exports = function (app) {
 
-        if (err) throw err;
-
-        var notes = JSON.parse(data);
-
-        // API ROUTES
+     // API ROUTES
         // ========================================================
     
-        // Setup the /api/notes get route
-        app.get("/api/notes", function(req, res) {
-            // Read the db.json file and return all saved notes as JSON.
+        // Setup the /api/notes GET route
+
+    app.get('/api/notes', function (req, res) {
+
+          // Setup notes variable
+        fs.readFile('./db/db.json', 'utf8', function (err, data) {
+            if (err) {
+                console.log(err);
+            }
+            notes = JSON.parse(data);
+             // Read the db.json file and return all saved notes as JSON.
             res.json(notes);
         });
+    });
 
-        // Setup the /api/notes post route
-        app.post("/api/notes", function(req, res) {
-            // Receives a new note, adds it to db.json, then returns the new note
-            let newNote = req.body;
-            notes.push(newNote);
-            updateDb();
-            return console.log("Added new note: "+newNote.title);
+   // Setup the /api/notes POST route
+    app.post('/api/notes', function (req, res) {
+
+  // Receives a new note, adds it to db.json, then returns the new note
+        let notes = req.body;
+        notes.id = uuidv4();
+
+        let notesArr = [];
+
+        fs.readFile('./db/db.json', 'utf8', function (err, data) {
+            if (err) {
+                console.log(err);
+            }
+            notesArr = JSON.parse(data);
+            notesArr.push(notes);
+
+            fs.writeFile('./db/db.json', JSON.stringify(notesArr), function (err) {
+                if (err) {
+                    console.log(err);
+                }
+                return res.json(notesArr);
+            });
         });
 
-        // Retrieves a note with specific id
-        app.get("/api/notes/:id", function(req,res) {
-            // display json for the notes array indices of the provided id
-            res.json(notes[req.params.id]);
-        });
+    });
 
-        // Deletes a note with specific id
-        app.delete("/api/notes/:id", function(req, res) {
-            notes.splice(req.params.id, 1);
-            updateDb();
-            console.log("Deleted note with id "+req.params.id);
+     // Deletes a note with specific id
+    app.delete('/api/notes/:id', function (req, res) {
+        let noteId = req.params.id;
+        fs.readFile('./db/db.json', 'utf8', function (err, data) {
+            if (err) {
+                console.log(err);
+            }
+            const notesArr = JSON.parse(data);
+
+            console.log(notesArr)
+
+            const newNotesArr = notesArr.filter(item => item.id !== noteId);
+
+            console.log("-------------")
+
+            console.log(newNotesArr)
+
+            fs.writeFile('./db/db.json', JSON.stringify(newNotesArr), function (err) {
+                if (err) {
+                    console.log(err)
+                }
+                return res.json(dbNotes);
+            })
+
         });
     });
+
 }
