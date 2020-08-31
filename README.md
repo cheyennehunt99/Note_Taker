@@ -3,9 +3,13 @@
 
 ## Demo
 ![GIF](demo/servernode.gif)
+
+
 Running my app on my local server before deploying to Heroku 
 
 ![GIF](demo/server.gif)
+
+
 App running on local server 3000
 
 ## Table of contents
@@ -27,8 +31,7 @@ of your day!
 
 - [JavaScript](https://www.javascript.com/)
 - [Node.js](https://nodejs.org/)
--[Heroku](https://heroku.com/)
-Heroku 
+-[Heroku](https://id.heroku.com/login)
 
 ## Summary
 
