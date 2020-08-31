@@ -3,8 +3,11 @@
 
 ## Demo
 ![GIF](demo/servernode.gif)
+Running my app on my local server before deploying to Heroku 
 
 ![GIF](demo/server.gif)
+App running on local server 3000
+
 ## Table of contents
 
 - [General info](#general-info)
@@ -17,10 +20,15 @@
 
 ## General info
 
-CLI app 
+CLI app deployed on Heroku that allows you to "SAVE" and "DELETE" notes to help keep track
+of your day!
 
 ## Technologies
 
+- [JavaScript](https://www.javascript.com/)
+- [Node.js](https://nodejs.org/)
+-[Heroku](https://heroku.com/)
+Heroku 
 
 ## Summary
 
