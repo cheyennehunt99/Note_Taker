@@ -33,7 +33,7 @@ of your day!
 - [Node.js](https://nodejs.org/)
 - [Heroku](https://id.heroku.com/login)
 - [package.json](https://docs.npmjs.com/creating-a-package-json-file)
-
+- [express](https://expressjs.com/)
 ## Summary
 
 
@@ -42,6 +42,9 @@ of your day!
 
 
 ## Expectations
+![GIF](demo/herokuapp.gif)
+App deployed on Heroku 
+Link: (https://tunh-notetaker.herokuapp.com/)
 
 
 
