@@ -5,7 +5,7 @@ const path = require('path');
 
 // Initialize express app
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Setup data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -18,5 +18,5 @@ require('./Routes/htmlRoutes')(app);
 
 // Setup listener
 app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
+    console.log(`App listening on PORT:${PORT}`);
 });  
