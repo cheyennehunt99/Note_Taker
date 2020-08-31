@@ -31,7 +31,8 @@ of your day!
 
 - [JavaScript](https://www.javascript.com/)
 - [Node.js](https://nodejs.org/)
--[Heroku](https://id.heroku.com/login)
+- [Heroku](https://id.heroku.com/login)
+- [package.json](https://docs.npmjs.com/creating-a-package-json-file)
 
 ## Summary
 
