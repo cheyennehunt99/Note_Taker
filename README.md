@@ -24,8 +24,7 @@ App running on local server 3000
 
 ## General info
 
-CLI app deployed on Heroku that allows you to "SAVE" and "DELETE" notes to help keep track
-of your day!
+CLI app deployed on Heroku that allows you to "ADD", "SAVE", and "DELETE" notes to help keep track of your day!
 
 ## Technologies
 
@@ -35,10 +34,21 @@ of your day!
 - [package.json](https://docs.npmjs.com/creating-a-package-json-file)
 - [express](https://expressjs.com/)
 ## Summary
-
+CLI app deployed using the following commands below to successfully run app on local server and through Heroku.
 
 ## Usage
+`$ npm install`
+`$ npm install express --save`
+`$ npm install uuid --save`
+`$ npm node server.js`
 
+Deploying your app to Heroku through terminal
+`heroku login`
+`$ git init`
+`$ heroku git:remote -a huykjhvjhbjh`
+`git add .`
+`git commit -m "deploying app"`
+`git push heroku master`
 
 
 ## Expectations
